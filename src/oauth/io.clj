@@ -84,8 +84,7 @@
     (if (= :stream (:as request))
       (handler request)
       (-> (handler request)
-          (deserialize)
-          (update-in [:body] hyphenize)))))
+          (deserialize)))))
 
 (def request
   (-> #'core/request
